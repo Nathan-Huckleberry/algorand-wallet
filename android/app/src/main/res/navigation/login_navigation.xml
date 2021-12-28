@@ -92,6 +92,16 @@
     </fragment>
 
     <fragment
+        android:id="@+id/registerMultisigFragment"
+        android:name="com.algorand.android.ui.register.multisig.RegisterMultisigFragment"
+        android:label="RegisterMultisigFragment"
+        tools:layout="@layout/fragment_register_multisig">
+        <action
+            android:id="@+id/action_registerMultisigFragment_to_qrCodeScannerFragment"
+            app:destination="@id/qrCodeScannerFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/registerIntroFragment"
         android:name="com.algorand.android.ui.register.registerintro.RegisterIntroFragment"
         android:label="RegisterIntroFragment"
@@ -141,6 +151,9 @@
         <action
             android:id="@+id/action_registerInfoFragment_to_registerWatchAccountFragment"
             app:destination="@id/registerWatchAccountFragment" />
+        <action
+            android:id="@+id/action_registerInfoFragment_to_registerMultisigFragment"
+            app:destination="@id/registerMultisigFragment" />
     </fragment>
     <fragment
         android:id="@+id/addAccountTypeSelectionFragment"

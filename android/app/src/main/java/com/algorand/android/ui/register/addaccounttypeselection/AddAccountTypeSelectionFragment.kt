@@ -44,6 +44,9 @@ class AddAccountTypeSelectionFragment : DaggerBaseFragment(R.layout.fragment_add
         binding.watchAccountSelectionItem.setOnClickListener {
             onRegisterTypeSelected(RegisterFlowType.WATCH)
         }
+        binding.createNewMultiSigWalletSelectionItem.setOnClickListener {
+            onRegisterTypeSelected(RegisterFlowType.MULTISIG)
+        }
     }
 
     private fun onRegisterTypeSelected(registerFlowType: RegisterFlowType) {
@@ -56,6 +59,9 @@ class AddAccountTypeSelectionFragment : DaggerBaseFragment(R.layout.fragment_add
             }
             RegisterFlowType.WATCH -> {
                 nav(actionAddAccountTypeSelectionFragmentToRegisterInfoFragment(RegisterInfoFragment.Type.WATCH))
+            }
+            RegisterFlowType.MULTISIG -> {
+                nav(actionAddAccountTypeSelectionFragmentToRegisterInfoFragment(RegisterInfoFragment.Type.MULTISIG))
             }
         }
     }

@@ -334,6 +334,8 @@
     <string name="choose_account">Choose Account</string>
     <string name="email_must_not_be_blank">Email must not be blank.</string>
     <string name="account_address_to_watch">Account Address to Watch</string>
+    <string name="number_of_participants">Number of Participants</string>
+    <string name="number_of_required">Number of Required Transaction Signatures</string>
     <string name="date">Date</string>
     <string name="copy">Copy</string>
     <string name="open_in_explorer">Open in Explorer</string>
@@ -347,6 +349,7 @@
     <string name="create_new_account">Create New Account</string>
     <string name="generate_an_account">Generate an account with a new address and passphrase</string>
     <string name="watch_account">Watch Account</string>
+    <string name="create_multi_sig">Create Multisig Wallet</string>
     <string name="follow_the_account">Monitor transactions of an account using just its address</string>
     <string name="new_uppercase">NEW</string>
     <string name="this_account_is_rekeyed">This account is rekeyed. You cannot sign transaction with account.</string>
@@ -415,6 +418,8 @@
     <string name="create_a_watch">Create a Watch Account</string>
     <string name="recover_an_algorand">Recover an Algorand account</string>
     <string name="in_the_following">In the following steps, you\'ll enter your 25-word recovery passphrase to recover an Algorand account. Have your recovery phrase handy before you begin.</string>
+    <string name="create_a_multisig">Create a multisignature wallet to be shared across multiple private keys</string>
+    <string name="with_a_multisig">With a multisignature wallet, each transaction must be signed by multiple private keys before the transaction is processed. This is useful for creating wallets that can be managed by multiple people.</string>
     <string name="account_name_optional">Account Name (Optional)</string>
     <string name="name_your_account_to_easily">Name your account to easily distinguishes them from one another. This is optional and the account names are stored on your device. </string>
     <string name="finish_account_creation">Finish account creation</string>
@@ -459,7 +464,9 @@
     <string name="monitor_activity_of">Monitor activity of an account without needing a recovery passphrase. This is useful for monitoring assets that are kept in cold storage.\n\n<annotation font="publicsans_regular_italic"><annotation custom="warning_color"><annotation type="bold">Warning</annotation>: If you do not have the corresponding recovery passphrase, do not send assets to this account.</annotation></annotation></string>
     <string name="i_want_a_new">I want a new account with a new address and recovery passphrase</string>
     <string name="i_want_to_monitor">I want to monitor an account that\'s held in cold storage</string>
+    <string name="i_want_to_create_a_multi">I want to create a multisignature wallet using multiple wallet keys</string>
     <string name="i_want_to_create_an">I want to create an account that is backed by my Ledger hardware wallet</string>
+    <string name="the_number_of">The number of public keys may be different from the number of signatures required to verify an account. This allows for the creation of majority-ruled accounts.</string>
     <string name="you_are_creating">You are creating a read-only view of an Algorand account. If you send assets to this account and you do not have the corresponding recovery passphrase, those assets will be lost.</string>
     <string name="name_your_account_to">Name your account to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
     <string name="keep_this_recovery_passphrase">Keep this recovery passphrase in a secure location that is accessible only by you. Do not lose this recovery passphrase.</string>

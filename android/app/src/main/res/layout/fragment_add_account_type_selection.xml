@@ -92,12 +92,37 @@
             android:layout_height="1dp"
             android:layout_marginStart="@dimen/register_type_selection_divider_start_margin"
             android:layout_marginEnd="20dp"
+            android:background="@color/dividerColor"
+            app:layout_constraintBottom_toTopOf="@id/createNewMultiSigWalletSelectionItem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pairLedgerSelectionItem" />
+
+        <com.algorand.android.customviews.RegisterTypeSelectionItem
+            android:id="@+id/createNewMultiSigWalletSelectionItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/createNewMultiSigWalletDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pairLedgerDivider"
+            app:typeSelectionDescriptionText="@string/i_want_to_create_a_multi"
+            app:typeSelectionIcon="@drawable/ic_create_account"
+            app:typeSelectionTitleText="@string/create_multi_sig" />
+
+        <View
+            android:id="@+id/createNewMultiSigWalletDivider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/register_type_selection_divider_start_margin"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
             android:background="@color/dividerColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pairLedgerSelectionItem" />
+            app:layout_constraintTop_toBottomOf="@id/createNewMultiSigWalletSelectionItem" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

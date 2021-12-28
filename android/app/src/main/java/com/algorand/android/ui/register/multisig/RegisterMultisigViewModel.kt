@@ -10,13 +10,17 @@
  * limitations under the License
  */
 
-package com.algorand.android.models
+package com.algorand.android.ui.register.multisig
 
-enum class RegisterFlowType {
-    ADD_ACCOUNT,
-    PAIR_LEDGER,
-    CREATE_WITH_PASSPHRASE,
-    RECOVER,
-    WATCH,
-    MULTISIG
+import androidx.hilt.lifecycle.ViewModelInject
+import com.algorand.android.core.AccountManager
+import com.algorand.android.core.BaseViewModel
+
+class RegisterMultisigViewModel @ViewModelInject constructor(
+    private val accountManager: AccountManager
+) : BaseViewModel() {
+
+    fun isThereAccountWithAddress(address: String): Boolean {
+        return accountManager.getAccount(address) != null
+    }
 }

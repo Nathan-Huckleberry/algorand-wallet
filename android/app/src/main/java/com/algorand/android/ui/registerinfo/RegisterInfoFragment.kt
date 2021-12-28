@@ -18,6 +18,7 @@ import com.algorand.android.ui.registerinfo.RegisterInfoFragmentDirections.Compa
 import com.algorand.android.ui.registerinfo.RegisterInfoFragmentDirections.Companion.actionRegisterInfoFragmentToBackupPassphraseFragment
 import com.algorand.android.ui.registerinfo.RegisterInfoFragmentDirections.Companion.actionRegisterInfoFragmentToRecoverWithPassphraseFragment
 import com.algorand.android.ui.registerinfo.RegisterInfoFragmentDirections.Companion.actionRegisterInfoFragmentToRegisterWatchAccountFragment
+import com.algorand.android.ui.registerinfo.RegisterInfoFragmentDirections.Companion.actionRegisterInfoFragmentToRegisterMultisigFragment
 import com.algorand.android.utils.getXmlStyledString
 import com.algorand.android.utils.openUrl
 import com.algorand.android.utils.viewbinding.viewBinding
@@ -97,6 +98,7 @@ class RegisterInfoFragment : BaseFragment(R.layout.fragment_register_info) {
                 Type.WRITE_DOWN -> actionRegisterInfoFragmentToBackupPassphraseFragment()
                 Type.WATCH -> actionRegisterInfoFragmentToRegisterWatchAccountFragment()
                 Type.RECOVERY -> actionRegisterInfoFragmentToRecoverWithPassphraseFragment()
+                Type.MULTISIG -> actionRegisterInfoFragmentToRegisterMultisigFragment()
             }
         )
     }
@@ -134,6 +136,14 @@ class RegisterInfoFragment : BaseFragment(R.layout.fragment_register_info) {
             descriptionTextResId = R.string.in_the_following,
             buttonTextResId = R.string.recover_an_algorand,
             infoUrl = "https://algorandwallet.com/support/getting-started/recover-an-algorand-account"
+        ),
+        MULTISIG(
+            animationResId = R.raw.shield_animation,
+            titleTextResId = R.string.create_a_multisig,
+            descriptionTextResId = R.string.with_a_multisig,
+            buttonTextResId = R.string.im_ready_to_begin,
+            // TODO: Update this
+            infoUrl = ""
         )
     }
 }
