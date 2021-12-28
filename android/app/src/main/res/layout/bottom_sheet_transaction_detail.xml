@@ -396,6 +396,21 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/roundTextView" />
 
+            <LinearLayout
+                android:id="@+id/signerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateDividerView">
+
+                <include android:layout="@layout/item_transaction_signer" />
+                <include android:layout="@layout/item_transaction_signer" />
+                <include android:layout="@layout/item_transaction_signer" />
+
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/idLabelTextView"
                 style="@style/TextAppearance.Label"
@@ -407,7 +422,7 @@
                 android:gravity="center_vertical"
                 android:text="@string/transaction_id"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/roundDividerView" />
+                app:layout_constraintTop_toBottomOf="@id/signerView" />
 
             <TextView
                 android:id="@+id/idTextView"

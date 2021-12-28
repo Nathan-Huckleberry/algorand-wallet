@@ -338,6 +338,7 @@
     <string name="email_must_not_be_blank">Email must not be blank.</string>
     <string name="account_address_to_watch">Account Address to Watch</string>
     <string name="participants">Participants</string>
+    <string name="signer">Signer</string>
     <string name="number_of_required">Number of Required Transaction Signatures</string>
     <string name="date">Date</string>
     <string name="copy">Copy</string>
