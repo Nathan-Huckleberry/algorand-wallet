@@ -33,6 +33,7 @@
     <string name="next">Next</string>
     <string name="please_name_your_account">Please name your account</string>
     <string name="account_name">Account Name</string>
+    <string name="participant_name">Participant Name</string>
     <string name="passphrase_verified">Passphrase Verified</string>
     <string name="your_passphrase_has_been_verified">Your passphrase has been verified. Make sure that you have backed it up as you will need it to recover your account.</string>
     <string name="verify_passcode">Verify Passcode</string>
@@ -98,6 +99,7 @@
     <string name="delete_contact">Delete Contact</string>
     <string name="are_you_sure_you_want_to_delete">Are you sure you want to delete this contact?</string>
     <string name="address">Address</string>
+    <string name="participant_address">Participant Address</string>
     <string name="version_format">Version %1$s</string>
     <string name="none_of_your_active_nodes">None of your active nodes are online. Please add or select another node.</string>
     <string name="pending">Pending</string>
@@ -422,7 +424,7 @@
     <string name="create_a_multisig">Create a multisignature wallet to be shared across multiple private keys</string>
     <string name="with_a_multisig">With a multisignature wallet, each transaction must be signed by multiple private keys before the transaction is processed. This is useful for creating wallets that can be managed by multiple people.</string>
     <string name="account_name_optional">Account Name (Optional)</string>
-    <string name="name_your_account_to_easily">Name your account to easily distinguishes them from one another. This is optional and the account names are stored on your device. </string>
+    <string name="participant_name_optional">Participant Name (Optional)</string>
     <string name="finish_account_creation">Finish account creation</string>
     <string name="welcome_to_algorand">Welcome to the Algorand Wallet</string>
     <string name="i_want_to_create">I want to create a new Algorand account</string>
@@ -470,6 +472,7 @@
     <string name="the_number_of">The number of participants may be different from the number of signatures required to verify an account. This allows for the creation of majority-ruled accounts.</string>
     <string name="you_are_creating">You are creating a read-only view of an Algorand account. If you send assets to this account and you do not have the corresponding recovery passphrase, those assets will be lost.</string>
     <string name="name_your_account_to">Name your account to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
+    <string name="name_the_participant_to">Name the participant to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
     <string name="keep_this_recovery_passphrase">Keep this recovery passphrase in a secure location that is accessible only by you. Do not lose this recovery passphrase.</string>
     <string name="learn_more">Learn More</string>
     <string name="no_contact_found">No Contact Found</string>
