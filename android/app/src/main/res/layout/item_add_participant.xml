@@ -15,13 +15,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="@dimen/mediumshadow_start_20dp_margin"
-    android:layout_marginEnd="@dimen/mediumshadow_end_20dp_margin"
-    android:layout_marginBottom="@dimen/mediumshadow_bottom_margin_16dp"
-    android:background="@drawable/bg_account_list_bottom_item"
     android:paddingStart="@dimen/mediumshadow_start_padding_4dp"
-    android:paddingEnd="@dimen/mediumshadow_end_padding_4dp"
-    android:paddingBottom="@dimen/mediumshadow_bottom_padding_4dp">
+    android:paddingEnd="@dimen/mediumshadow_end_padding_4dp">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addAssetButton"
@@ -29,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_gravity="end"
-        android:layout_marginTop="4dp"
         android:gravity="start|center_vertical"
         android:paddingHorizontal="@dimen/keyline_1"
         android:text="@string/add_participant"

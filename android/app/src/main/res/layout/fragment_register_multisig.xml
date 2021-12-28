@@ -47,12 +47,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/bg_medium_shadow"
+                android:paddingTop="@dimen/mediumshadow_top_padding_4dp"
+                android:paddingBottom="@dimen/mediumshadow_bottom_padding_4dp">
 
-                <include layout="@layout/item_participant_header" />
-                <include layout="@layout/item_participant_body" />
-                <include layout="@layout/item_participant_body" />
-                <include layout="@layout/item_participant_body" />
+                <include layout="@layout/item_participant" />
+                <include layout="@layout/item_participant" />
+                <include layout="@layout/item_participant" />
                 <include layout="@layout/item_add_participant" />
 
 
@@ -79,7 +81,9 @@
             android:layout_marginStart="@dimen/input_horizontal_20dp_margin"
             android:layout_marginTop="@dimen/input_label_vertical_margin"
             android:layout_marginEnd="@dimen/input_horizontal_20dp_margin"
-            android:background="@drawable/bg_note"
+            android:paddingTop="@dimen/mediumshadow_top_padding_4dp"
+            android:paddingBottom="@dimen/mediumshadow_bottom_padding_4dp"
+            android:background="@drawable/bg_medium_shadow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/signatureCounterTextView">

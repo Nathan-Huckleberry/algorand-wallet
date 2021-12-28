@@ -11,52 +11,54 @@
   ~ limitations under the License
   -->
 
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/addressInfoRootLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+    android:paddingStart="@dimen/mediumshadow_start_padding_4dp"
+    android:paddingEnd="@dimen/mediumshadow_end_padding_4dp"
+    android:layout_marginBottom="4dp">
 
-    <!--DEFAULT NOT SET VIEWS-->
+    <Button
+        android:id="@+id/minusBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/itemQuanEt"
+        android:background="@drawable/custom_btn_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/itemQuanEt"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/itemQuanEt"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:gravity="center"
+        android:inputType="number"
+        android:minEms="1"
+        android:text="16"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/minusBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/itemQuanEt"
-            android:background="@drawable/custom_btn_minus" />
+    <Button
+        android:id="@+id/plusBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/itemQuanEt"
+        android:background="@drawable/custom_btn_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/itemQuanEt"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/itemQuanEt"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:minEms="1"
-            android:text="16"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:background="@null"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/plusBtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/itemQuanEt"
-            android:background="@drawable/custom_btn_plus" />
-    </RelativeLayout>
-
-</merge>
+</androidx.constraintlayout.widget.ConstraintLayout>
