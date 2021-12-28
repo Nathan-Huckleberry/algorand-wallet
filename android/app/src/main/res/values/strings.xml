@@ -244,6 +244,7 @@
     <string name="go_to_home">Go to Home</string>
     <string name="accept">Accept</string>
     <string name="add_new_asset">Add new asset</string>
+    <string name="add_participant">Add participant</string>
     <string name="add_new_account">Add new account</string>
     <string name="try_different">Try different asset name or asset id</string>
     <string name="share_qr">Share QR</string>
@@ -334,7 +335,7 @@
     <string name="choose_account">Choose Account</string>
     <string name="email_must_not_be_blank">Email must not be blank.</string>
     <string name="account_address_to_watch">Account Address to Watch</string>
-    <string name="number_of_participants">Number of Participants</string>
+    <string name="participants">Participants</string>
     <string name="number_of_required">Number of Required Transaction Signatures</string>
     <string name="date">Date</string>
     <string name="copy">Copy</string>
@@ -466,7 +467,7 @@
     <string name="i_want_to_monitor">I want to monitor an account that\'s held in cold storage</string>
     <string name="i_want_to_create_a_multi">I want to create a multisignature wallet using multiple wallet keys</string>
     <string name="i_want_to_create_an">I want to create an account that is backed by my Ledger hardware wallet</string>
-    <string name="the_number_of">The number of public keys may be different from the number of signatures required to verify an account. This allows for the creation of majority-ruled accounts.</string>
+    <string name="the_number_of">The number of participants may be different from the number of signatures required to verify an account. This allows for the creation of majority-ruled accounts.</string>
     <string name="you_are_creating">You are creating a read-only view of an Algorand account. If you send assets to this account and you do not have the corresponding recovery passphrase, those assets will be lost.</string>
     <string name="name_your_account_to">Name your account to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
     <string name="keep_this_recovery_passphrase">Keep this recovery passphrase in a secure location that is accessible only by you. Do not lose this recovery passphrase.</string>
