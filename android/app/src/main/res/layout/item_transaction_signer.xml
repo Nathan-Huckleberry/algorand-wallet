@@ -31,9 +31,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/keyline_1"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/statusButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/statusButton"
+        style="@style/BaseIconButton.Circle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/targetUserView"
+        app:layout_constraintTop_toTopOf="@id/targetUserView"
+        tools:icon="@drawable/ic_pending"
+        tools:visibility="visible" />
 
     <View
         android:id="@+id/targetUserDividerView"

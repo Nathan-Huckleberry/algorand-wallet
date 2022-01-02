@@ -405,9 +405,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dateDividerView">
 
-                <include android:layout="@layout/item_transaction_signer" />
-                <include android:layout="@layout/item_transaction_signer" />
-                <include android:layout="@layout/item_transaction_signer" />
+                <include layout="@layout/item_transaction_signer" />
+                <include layout="@layout/item_transaction_signer" />
+                <include layout="@layout/item_transaction_signer" />
 
             </LinearLayout>
 

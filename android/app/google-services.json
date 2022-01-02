@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239913066184",
+    "project_id": "algorand-test-57cb9",
+    "storage_bucket": "algorand-test-57cb9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239913066184:android:69cb94119f1641a8894ffd",
+        "android_client_info": {
+          "package_name": "com.algorand.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239913066184-doe703pjes4g579ebn705g5p2dvpq9mm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe3yEt82Q1lFnihwNGZJ2XdULwglK8oAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239913066184-doe703pjes4g579ebn705g5p2dvpq9mm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
