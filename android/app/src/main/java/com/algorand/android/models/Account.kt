@@ -34,6 +34,7 @@ data class Account constructor(
     fun getSecretKey(): ByteArray? {
         return when (detail) {
             is Detail.Standard -> detail.secretKey
+            is Detail.Multisig -> detail.secretKey
             else -> null // TODO may throw exception later.
         }
     }
@@ -63,6 +64,7 @@ data class Account constructor(
                     val authDetailType = when (authDetail) {
                         is Standard -> Type.STANDARD
                         is Ledger -> Type.LEDGER
+                        // TODO @nhuck: Add Multisig
                         else -> null
                     }
                     val safeAuthDetail = authDetail.takeIf { authDetailType != null }
@@ -73,6 +75,12 @@ data class Account constructor(
 
         @Parcelize
         object Watch : Detail()
+
+        @Parcelize
+        data class Multisig(
+                val secretKey: ByteArray,
+                val signers: List<ByteArray>
+            ) : Detail()
     }
 
     enum class Type {
@@ -81,7 +89,8 @@ data class Account constructor(
         LEDGER,
         REKEYED,
         REKEYED_AUTH,
-        WATCH
+        WATCH,
+        MULTISIG
     }
 
     override fun toString(): String {
@@ -96,6 +105,7 @@ data class Account constructor(
                 is Detail.Rekeyed -> Type.REKEYED
                 is Detail.Watch -> Type.WATCH
                 is Detail.RekeyedAuth -> Type.REKEYED_AUTH
+                is Detail.Multisig -> Type.MULTISIG
             }
             return Account(publicKey, accountName, type, detail)
         }

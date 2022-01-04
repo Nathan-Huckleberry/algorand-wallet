@@ -17,10 +17,10 @@ import com.algorand.android.core.AccountManager
 import com.algorand.android.core.BaseViewModel
 
 class RegisterMultisigViewModel @ViewModelInject constructor(
-    private val accountManager: AccountManager
+    private val signers: MutableList<String>
 ) : BaseViewModel() {
 
-    fun isThereAccountWithAddress(address: String): Boolean {
-        return accountManager.getAccount(address) != null
+    fun addSigner(address: String): Boolean {
+        return signers.add(address)
     }
 }
