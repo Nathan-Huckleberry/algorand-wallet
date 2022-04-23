@@ -11,7 +11,6 @@
   -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -21,80 +20,48 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/participantCounterTextView"
+            android:id="@+id/addressLabelTextView"
             style="@style/TextAppearance.Label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/input_label_horizontal_margin"
             android:layout_marginTop="20dp"
-            android:text="@string/participants"
+            android:text="@string/account_address_to_watch"
             android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@id/participantCounterLayout"
+            app:layout_constraintStart_toStartOf="@id/addressLayout"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ScrollView
-            android:id="@+id/participantCounterLayout"
+        <LinearLayout
+            android:id="@+id/addressLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/input_horizontal_20dp_margin"
             android:layout_marginTop="@dimen/input_label_vertical_margin"
             android:layout_marginEnd="@dimen/input_horizontal_20dp_margin"
+            android:background="@drawable/bg_small_shadow"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/participantCounterTextView">
+            app:layout_constraintTop_toBottomOf="@id/addressLabelTextView">
 
-            <LinearLayout
-                android:id="@+id/participantListLayout"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/addressEditText"
+                style="@style/Input.WithoutBackground"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_medium_shadow"
-                android:paddingTop="@dimen/mediumshadow_top_padding_4dp"
-                android:paddingBottom="@dimen/mediumshadow_bottom_padding_4dp">
+                android:layout_weight="1"
+                android:gravity="top"
+                android:hint="@string/paste_address_or"
+                android:minLines="4" />
 
-                <include layout="@layout/item_participant" />
-                <include layout="@layout/item_participant" />
-                <include layout="@layout/item_participant" />
-                <include
-                    layout="@layout/item_add_participant"
-                    android:id="@+id/addParticipantButtonInclude" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/scanQrButton"
+                style="@style/BaseIconButton.Circle"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="12dp"
+                app:icon="@drawable/ic_qr_scan" />
 
-
-            </LinearLayout>
-
-        </ScrollView>
-
-        <TextView
-            android:id="@+id/signatureCounterTextView"
-            style="@style/TextAppearance.Label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/input_label_horizontal_margin"
-            android:text="@string/number_of_required"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="@id/signatureCounterLayout"
-            app:layout_constraintTop_toBottomOf="@id/participantCounterLayout" />
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/signatureCounterLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/input_horizontal_20dp_margin"
-            android:layout_marginTop="@dimen/input_label_vertical_margin"
-            android:layout_marginEnd="@dimen/input_horizontal_20dp_margin"
-            android:paddingTop="@dimen/mediumshadow_top_padding_4dp"
-            android:paddingBottom="@dimen/mediumshadow_bottom_padding_4dp"
-            android:background="@drawable/bg_medium_shadow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signatureCounterTextView">
-
-            <include
-                layout="@layout/custom_number_picker" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/descriptionTextView"
@@ -103,11 +70,11 @@
             android:layout_marginHorizontal="@dimen/page_horizontal_spacing"
             android:layout_marginTop="@dimen/smallshadow_bottom_margin_16dp"
             android:fontFamily="@font/publicsans_regular"
-            android:text="@string/the_number_of"
+            android:text="@string/you_are_creating"
             android:textColor="@color/tertiaryTextColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/signatureCounterLayout" />
+            app:layout_constraintTop_toBottomOf="@id/addressLayout" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/confirmationButton"
@@ -115,7 +82,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/bottom_safe_area_margin"
-            android:text="@string/next"
+            android:text="@string/verify"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

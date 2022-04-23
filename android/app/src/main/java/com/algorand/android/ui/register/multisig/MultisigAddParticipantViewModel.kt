@@ -13,12 +13,14 @@
 package com.algorand.android.ui.register.multisig
 
 import androidx.hilt.lifecycle.ViewModelInject
+import com.algorand.android.core.AccountManager
 import com.algorand.android.core.BaseViewModel
 
-class RegisterMultisigViewModel @ViewModelInject constructor() : BaseViewModel() {
-    private var participants: MutableList<String> = mutableListOf<String>()
+class MultisigAddParticipantViewModel @ViewModelInject constructor(
+    private val accountManager: AccountManager
+) : BaseViewModel() {
 
-    fun addSigner(address: String): Boolean {
-        return participants.add(address)
+    fun isThereAccountWithAddress(address: String): Boolean {
+        return accountManager.getAccount(address) != null
     }
 }

@@ -92,13 +92,24 @@
     </fragment>
 
     <fragment
+        android:id="@+id/multisigAddParticipantFragment"
+        android:name="com.algorand.android.ui.register.multisig.MultisigAddParticipantFragment"
+        android:label="MultisigAddParticipantFragment"
+        tools:layout="@layout/fragment_register_multisig_add_participant">
+        <action
+            android:id="@+id/action_multisigAddParticpantFragment_to_qrCodeScannerFragment"
+            app:destination="@id/qrCodeScannerFragment" />
+    </fragment>
+
+
+    <fragment
         android:id="@+id/registerMultisigFragment"
         android:name="com.algorand.android.ui.register.multisig.RegisterMultisigFragment"
         android:label="RegisterMultisigFragment"
         tools:layout="@layout/fragment_register_multisig">
         <action
-            android:id="@+id/action_registerMultisigFragment_to_qrCodeScannerFragment"
-            app:destination="@id/qrCodeScannerFragment" />
+            android:id="@+id/action_registerMultisigFragment_to_multisigAddParticipantFragment"
+            app:destination="@id/multisigAddParticipantFragment" />
     </fragment>
 
     <fragment

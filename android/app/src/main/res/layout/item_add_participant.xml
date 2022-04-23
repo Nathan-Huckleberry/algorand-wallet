@@ -19,7 +19,7 @@
     android:paddingEnd="@dimen/mediumshadow_end_padding_4dp">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/addAssetButton"
+        android:id="@+id/addParticipantButton"
         style="@style/TextButton.Icon"
         android:layout_width="match_parent"
         android:layout_height="44dp"

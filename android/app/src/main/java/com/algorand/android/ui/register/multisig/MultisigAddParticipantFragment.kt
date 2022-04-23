@@ -20,45 +20,73 @@ import com.algorand.android.MainNavigationDirections
 import com.algorand.android.MainViewModel
 import com.algorand.android.R
 import com.algorand.android.core.DaggerBaseFragment
-import com.algorand.android.databinding.FragmentRegisterMultisigBinding
+import com.algorand.android.databinding.FragmentRegisterWatchAccountBinding
+import com.algorand.android.models.Account
 import com.algorand.android.models.AnnotatedString
+import com.algorand.android.models.DecodedQrCode
 import com.algorand.android.models.FragmentConfiguration
 import com.algorand.android.models.ToolbarConfiguration
+import com.algorand.android.ui.qr.QrCodeScannerFragment
+import com.algorand.android.ui.qr.QrCodeScannerFragment.Companion.QR_SCAN_RESULT_KEY
 import com.algorand.android.utils.SingleButtonBottomSheet.Companion.ACCEPT_KEY
+import com.algorand.android.utils.analytics.CreationType
 import com.algorand.android.utils.hideKeyboard
+import com.algorand.android.utils.isValidAddress
+import com.algorand.android.utils.showAlertDialog
 import com.algorand.android.utils.startSavedStateListener
 import com.algorand.android.utils.useSavedStateValue
 import com.algorand.android.utils.viewbinding.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RegisterMultisigFragment : DaggerBaseFragment(R.layout.fragment_register_multisig) {
+class MultisigAddParticipantFragment : DaggerBaseFragment(R.layout.fragment_register_multisig_add_participant) {
 
     private val toolbarConfiguration = ToolbarConfiguration(
-        titleResId = R.string.create_multi_sig,
+        titleResId = R.string.create_a_watch,
         startIconResId = R.drawable.ic_back_navigation,
         startIconClick = ::onBackClick
     )
 
     override val fragmentConfiguration = FragmentConfiguration(toolbarConfiguration = toolbarConfiguration)
 
-    private val registerMultisigViewModel: RegisterMultisigViewModel by viewModels()
+    private val registerMultisigAddParticipantViewModel: MultisigAddParticipantViewModel by viewModels()
 
     private val mainViewModel: MainViewModel by activityViewModels()
 
-    private val binding by viewBinding(FragmentRegisterMultisigBinding::bind)
+    private val binding by viewBinding(FragmentRegisterWatchAccountBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initSavedStateListeners()
-        binding.addParticipantButtonInclude.addParticipantButton.setOnClickListener { onAddParticipantClick() }
+        binding.scanQrButton.setOnClickListener { onScanQrClick() }
+        binding.confirmationButton.setOnClickListener { onNextClick() }
     }
 
     private fun initSavedStateListeners() {
         startSavedStateListener(R.id.registerWatchAccountFragment) {
             useSavedStateValue<Boolean>(ACCEPT_KEY) {
-                nav(RegisterMultisigFragmentDirections.actionGlobalToHomeNavigation())
+                nav(MultisigAddParticipantFragmentDirections.actionGlobalToHomeNavigation())
             }
+            useSavedStateValue<DecodedQrCode>(QR_SCAN_RESULT_KEY) { decodedQrCode ->
+                if (!decodedQrCode.address.isNullOrBlank()) {
+                    binding.addressEditText.setText(decodedQrCode.address)
+                }
+            }
+        }
+    }
+
+    private fun onNextClick() {
+        val enteredAddress = binding.addressEditText.text.toString()
+        if (enteredAddress.isValidAddress()) {
+            if (registerMultisigAddParticipantViewModel.isThereAccountWithAddress(enteredAddress).not()) {
+                val newWatchAccount = Account.create(enteredAddress, Account.Detail.Watch)
+                mainViewModel.addAccount(newWatchAccount, CreationType.WATCH)
+                showAccountAddedBottomSheet()
+            } else {
+                context?.showAlertDialog(getString(R.string.error), getString(R.string.this_account_already_exists))
+            }
+        } else {
+            context?.showAlertDialog(getString(R.string.error), getString(R.string.entered_address_is_not_valid))
         }
     }
 
@@ -74,12 +102,16 @@ class RegisterMultisigFragment : DaggerBaseFragment(R.layout.fragment_register_m
         )
     }
 
+    private fun onScanQrClick() {
+        nav(
+            MultisigAddParticipantFragmentDirections.actionMultisigAddParticpantFragmentToQrCodeScannerFragment(
+                scanReturnType = listOf(QrCodeScannerFragment.ScanReturnType.ADDRESS_NAVIGATE_BACK).toTypedArray()
+            )
+        )
+    }
+
     private fun onBackClick() {
         view?.hideKeyboard()
         navBack()
-    }
-
-    private fun onAddParticipantClick() {
-        nav(RegisterMultisigFragmentDirections.actionRegisterMultisigFragmentToMultisigAddParticipantFragment())
     }
 }

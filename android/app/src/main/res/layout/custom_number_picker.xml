@@ -33,14 +33,14 @@
 
     <EditText
         android:id="@+id/itemQuanEt"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@null"
         android:gravity="center"
         android:inputType="number"
         android:minEms="1"
-        android:text="16"
+        android:text="4/4"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/black"

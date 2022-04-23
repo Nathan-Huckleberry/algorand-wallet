@@ -69,6 +69,9 @@ class AccountDeserializer : JsonDeserializer<Account> {
             Account.Type.WATCH -> {
                 deserialize<Account.Detail.Watch>(detailJsonObject, Account.Detail.Watch::class.java)
             }
+            Account.Type.MULTISIG -> {
+                deserialize<Account.Detail.Multisig>(detailJsonObject, Account.Detail.Multisig::class.java)
+            }
             Account.Type.REKEYED_AUTH -> {
                 deserializeRekeyedAuth(detailJsonObject)
             }

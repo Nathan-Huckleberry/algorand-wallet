@@ -78,9 +78,9 @@ data class Account constructor(
 
         @Parcelize
         data class Multisig(
-                val secretKey: ByteArray,
-                val signers: List<ByteArray>
-            ) : Detail()
+            val secretKey: ByteArray,
+            val participants: List<ByteArray>
+        ) : Detail()
     }
 
     enum class Type {
