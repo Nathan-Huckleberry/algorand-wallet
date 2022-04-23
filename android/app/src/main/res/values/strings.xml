@@ -93,6 +93,7 @@
     <string name="transaction_detail">Transaction Detail</string>
     <string name="none_of_the_active_nodes_seem">None of the active nodes seem to be active. Please make sure you have at least one active node before proceeding.</string>
     <string name="this_account_already_exists">This account already exists.</string>
+    <string name="this_participant_already_exists">This participant already exists.</string>
     <string name="delete">Delete</string>
     <string name="round">Round</string>
     <string name="account">Account</string>
@@ -337,6 +338,7 @@
     <string name="choose_account">Choose Account</string>
     <string name="email_must_not_be_blank">Email must not be blank.</string>
     <string name="account_address_to_watch">Account Address to Watch</string>
+    <string name="participant_account_address">Participant Account Address</string>
     <string name="participants">Participants</string>
     <string name="signer">Signer</string>
     <string name="number_of_required">Number of Required Transaction Signatures</string>
@@ -472,6 +474,7 @@
     <string name="i_want_to_create_an">I want to create an account that is backed by my Ledger hardware wallet</string>
     <string name="the_number_of">The number of participants may be different from the number of signatures required to verify an account. This allows for the creation of majority-ruled accounts.</string>
     <string name="you_are_creating">You are creating a read-only view of an Algorand account. If you send assets to this account and you do not have the corresponding recovery passphrase, those assets will be lost.</string>
+    <string name="you_are_adding">You are adding a participant to your multisignature Algorand wallet. This participant will be able to sign transactions from your multisignature wallet.</string>
     <string name="name_your_account_to">Name your account to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
     <string name="name_the_participant_to">Name the participant to easily identify it while using the Algorand Wallet. These names are stored locally, and can only be seen by you.</string>
     <string name="keep_this_recovery_passphrase">Keep this recovery passphrase in a secure location that is accessible only by you. Do not lose this recovery passphrase.</string>

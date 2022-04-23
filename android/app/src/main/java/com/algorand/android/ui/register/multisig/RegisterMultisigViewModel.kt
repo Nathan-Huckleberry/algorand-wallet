@@ -18,7 +18,11 @@ import com.algorand.android.core.BaseViewModel
 class RegisterMultisigViewModel @ViewModelInject constructor() : BaseViewModel() {
     private var participants: MutableList<String> = mutableListOf<String>()
 
-    fun addSigner(address: String): Boolean {
+    fun addParticipant(address: String): Boolean {
         return participants.add(address)
+    }
+
+    fun isThereParticipant(address: String): Boolean {
+        return participants.contains(address)
     }
 }
